@@ -1,11 +1,13 @@
 ---
+const baseUrl = import.meta.env.BASE_URL;
+
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Leistungen', href: '#leistungen' },
-  { name: 'Galerie', href: '#galerie' },
-  { name: 'Über uns', href: '#ueber-uns' },
-  { name: 'Referenzen', href: '#referenzen' },
-  { name: 'Kontakt', href: '#kontakt' },
+  { name: 'Home', href: `${baseUrl}#home` },
+  { name: 'Leistungen', href: `${baseUrl}#leistungen` },
+  { name: 'Galerie', href: `${baseUrl}#galerie` },
+  { name: 'Über uns', href: `${baseUrl}#ueber-uns` },
+  { name: 'Referenzen', href: `${baseUrl}#referenzen` },
+  { name: 'Kontakt', href: `${baseUrl}#kontakt` },
 ];
 ---
 
@@ -19,7 +21,7 @@ const navItems = [
         <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center shadow-lg animate-blob">
           <span class="text-2xl">🎨</span>
         </div>
-        <a href="#home" class="text-xl sm:text-2xl font-bold font-display text-gray-900 hover:scale-105 transition-transform">
+        <a href={`${baseUrl}#home`} class="text-xl sm:text-2xl font-bold font-display text-gray-900 hover:scale-105 transition-transform">
           <span class="gradient-text">Sabines Kinderschminken</span>
         </a>
       </div>
@@ -38,7 +40,7 @@ const navItems = [
         ))}
         <li class="opacity-0 animate-fade-in-up delay-600">
           <a
-            href="#kontakt"
+            href={`${baseUrl}#kontakt`}
             class="ml-2 px-6 py-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-fancy"
           >
             Buchen
@@ -75,7 +77,7 @@ const navItems = [
         ))}
         <li class="transform translate-x-8 opacity-0 transition-all duration-300 mobile-menu-item">
           <a
-            href="#kontakt"
+            href={`${baseUrl}#kontakt`}
             class="block px-4 py-3 text-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mt-2"
           >
             Jetzt Buchen
