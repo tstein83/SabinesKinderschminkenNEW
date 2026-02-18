@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Impressum - Sabines Kinderschminken"
+  description="Impressum und rechtliche Hinweise von Sabines Kinderschminken"
+>
+  <Header />
+  <main class="pt-24 pb-20 min-h-screen bg-gradient-to-br from-pink-50 via-white to-cyan-50">
+    <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-4">
+          Impressum
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="bg-white rounded-3xl shadow-colorful-lg p-8 md:p-12 space-y-8">
+
+        <!-- Angaben gemäß § 5 TMG -->
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Angaben gemäß § 5 TMG
+          </h2>
+          <div class="space-y-2 text-gray-700 pl-5">
+            <p class="font-semibold text-lg text-gray-900">Sabines Kinderschminken und mehr</p>
+            <p>Einzelunternehmen</p>
+            <p>Neue Str. 9A</p>
+            <p>64560 Riedstadt</p>
+          </div>
+        </section>
+
+        <!-- Kontakt -->
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Kontakt
+          </h2>
+          <div class="space-y-2 text-gray-700 pl-5">
+            <p><span class="font-semibold">Telefon:</span> 06158 84769</p>
+            <p><span class="font-semibold">E-Mail:</span> <a href="mailto:info@sabineskinderschminken.de" class="text-[var(--color-primary)] hover:underline">info@sabineskinderschminken.de</a></p>
+            <p><span class="font-semibold">Website:</span> <a href="https://www.sabineskinderschminken.de" class="text-[var(--color-primary)] hover:underline">www.sabineskinderschminken.de</a></p>
+          </div>
+        </section>
+
+        <!-- Steuernummer -->
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Umsatzsteuer-ID
+          </h2>
+          <div class="space-y-2 text-gray-700 pl-5">
+            <p><span class="font-semibold">Steuernummer:</span> 021 836 61614</p>
+            <p>Finanzamt Groß-Gerau</p>
+          </div>
+        </section>
+
+        <!-- Haftungsausschluss -->
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Haftungsausschluss
+          </h2>
+
+          <div class="space-y-4 text-gray-700 pl-5">
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2">Haftung für Inhalte</h3>
+              <p class="leading-relaxed">
+                Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2">Haftung für Links</h3>
+              <p class="leading-relaxed">
+                Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Urheberrecht / Bildrechte -->
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Urheberrecht & Bildrechte
+          </h2>
+          <div class="space-y-2 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Alle Bilder dieser Seite sind <strong>©by Sabines Kinderschminken und mehr</strong>. Das Kopieren, Vervielfältigen oder anderweitige Verwenden der Bilder ist ohne ausdrückliche Zustimmung durch Sabine Kobsa <strong>nicht erlaubt</strong>!
+            </p>
+            <p class="leading-relaxed mt-4">
+              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+            </p>
+          </div>
+        </section>
+
+        <!-- Datenschutz -->
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Datenschutz
+          </h2>
+          <div class="space-y-2 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies stets auf freiwilliger Basis.
+            </p>
+            <p class="leading-relaxed mt-4">
+              Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+            </p>
+            <p class="leading-relaxed mt-4">
+              Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
+            </p>
+          </div>
+        </section>
+
+        <!-- Credits -->
+        <section class="pt-6 border-t-2 border-gray-100">
+          <p class="text-sm text-gray-500 text-center">
+            Impressum erstellt und regelmäßig aktualisiert durch <strong>janolaw AG</strong>
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Back to Home Button -->
+      <div class="text-center mt-12">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold rounded-full shadow-colorful hover:shadow-colorful-lg transition-all duration-300 hover:scale-105"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Zurück zur Startseite
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

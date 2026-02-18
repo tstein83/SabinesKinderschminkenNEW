@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Datenschutz - Sabines Kinderschminken"
+  description="Datenschutzerklärung von Sabines Kinderschminken"
+>
+  <Header />
+  <main class="pt-24 pb-20 min-h-screen bg-gradient-to-br from-pink-50 via-white to-cyan-50">
+    <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-4">
+          Datenschutz
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Content Card -->
+      <div class="bg-white rounded-3xl shadow-colorful-lg p-8 md:p-12 space-y-8">
+
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Datenschutzerklärung
+          </h2>
+          <div class="space-y-4 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Kontakt mit uns
+          </h2>
+          <div class="space-y-4 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Datenspeicherung
+          </h2>
+          <div class="space-y-4 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies stets auf freiwilliger Basis.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Ihre Rechte
+          </h2>
+          <div class="space-y-4 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Kontaktdaten
+          </h2>
+          <div class="space-y-2 text-gray-700 pl-5">
+            <p>Sie erreichen uns unter folgenden Kontaktdaten:</p>
+            <div class="mt-4 space-y-2">
+              <p><span class="font-semibold">Sabines Kinderschminken und mehr</span></p>
+              <p>Neue Str. 9A</p>
+              <p>64560 Riedstadt</p>
+              <p class="mt-2"><span class="font-semibold">Telefon:</span> 06158 84769</p>
+              <p><span class="font-semibold">E-Mail:</span> <a href="mailto:info@sabineskinderschminken.de" class="text-[var(--color-primary)] hover:underline">info@sabineskinderschminken.de</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold font-display text-gray-900 mb-4 flex items-center gap-3">
+            <span class="w-2 h-8 bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full"></span>
+            Widerspruch Werbe-Mails
+          </h2>
+          <div class="space-y-4 text-gray-700 pl-5">
+            <p class="leading-relaxed">
+              Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Back to Home Button -->
+      <div class="text-center mt-12">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold rounded-full shadow-colorful hover:shadow-colorful-lg transition-all duration-300 hover:scale-105"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Zurück zur Startseite
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
