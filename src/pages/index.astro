@@ -160,7 +160,25 @@ import Footer from '../components/Footer.astro';
 
             <!-- Actual form container -->
             <div class="relative bg-white rounded-[3rem] shadow-colorful-lg p-8 md:p-12 transform -rotate-0">
-              <form class="space-y-6">
+              <!-- Success Message -->
+              <div id="success-message" class="hidden mb-6 p-4 bg-green-50 border-2 border-green-500 rounded-2xl">
+                <p class="text-green-700 font-semibold text-center">✓ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet.</p>
+              </div>
+
+              <!-- Error Message -->
+              <div id="error-message" class="hidden mb-6 p-4 bg-red-50 border-2 border-red-500 rounded-2xl">
+                <p class="text-red-700 font-semibold text-center">✗ Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>
+              </div>
+
+              <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                <!-- Web3Forms Access Key - WICHTIG: Ersetzen Sie dies mit Ihrem eigenen Key von https://web3forms.com -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                <!-- Optional: Redirect nach Erfolg -->
+                <input type="hidden" name="redirect" value="https://tstein83.github.io/SabinesKinderschminkenNEW/?success=true">
+
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <!-- Name & Email Row -->
                 <div class="grid md:grid-cols-2 gap-6">
                   <div class="space-y-2">
@@ -245,10 +263,11 @@ import Footer from '../components/Footer.astro';
                 <!-- Submit Button -->
                 <button
                   type="submit"
+                  id="submit-btn"
                   class="group relative w-full px-8 py-5 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold text-lg rounded-2xl shadow-colorful hover:shadow-colorful-lg transition-all duration-300 hover:scale-[1.02] cursor-fancy overflow-hidden"
                 >
                   <span class="relative z-10 flex items-center justify-center gap-3">
-                    Anfrage senden
+                    <span id="btn-text">Anfrage senden</span>
                     <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
@@ -256,6 +275,63 @@ import Footer from '../components/Footer.astro';
                   <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </form>
+
+              <script>
+                const form = document.getElementById('contact-form');
+                const submitBtn = document.getElementById('submit-btn');
+                const btnText = document.getElementById('btn-text');
+                const successMessage = document.getElementById('success-message');
+                const errorMessage = document.getElementById('error-message');
+
+                // Check if redirected with success parameter
+                if (window.location.search.includes('success=true')) {
+                  successMessage?.classList.remove('hidden');
+                  setTimeout(() => {
+                    window.history.replaceState({}, '', window.location.pathname);
+                  }, 100);
+                }
+
+                form?.addEventListener('submit', async (e) => {
+                  e.preventDefault();
+
+                  // Disable button and show loading state
+                  submitBtn.disabled = true;
+                  btnText.textContent = 'Wird gesendet...';
+
+                  // Hide previous messages
+                  successMessage?.classList.add('hidden');
+                  errorMessage?.classList.add('hidden');
+
+                  try {
+                    const formData = new FormData(form);
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                      method: 'POST',
+                      body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                      successMessage?.classList.remove('hidden');
+                      form.reset();
+                      setTimeout(() => {
+                        successMessage?.classList.add('hidden');
+                      }, 5000);
+                    } else {
+                      throw new Error('Form submission failed');
+                    }
+                  } catch (error) {
+                    errorMessage?.classList.remove('hidden');
+                    setTimeout(() => {
+                      errorMessage?.classList.add('hidden');
+                    }, 5000);
+                  } finally {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Anfrage senden';
+                  }
+                });
+              </script>
 
               <!-- Contact Info Cards -->
               <div class="grid sm:grid-cols-3 gap-4 mt-8 pt-8 border-t-2 border-gray-100">
