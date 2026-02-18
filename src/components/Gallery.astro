@@ -1,28 +1,30 @@
 ---
+const baseUrl = import.meta.env.BASE_URL;
+
 const galleryImages = [
   // Kinderschminken
-  { src: '/images/gallery/kinderschminken_beispiel_1.jpg', category: 'kinderschminken', alt: 'Kinderschminken Beispiel 1' },
-  { src: '/images/gallery/kinderschminken_beispiel_2.jpg', category: 'kinderschminken', alt: 'Kinderschminken Beispiel 2' },
-  { src: '/images/gallery/galerie_1.jpg', category: 'kinderschminken', alt: 'Kinderschminken' },
-  { src: '/images/gallery/galerie_2.jpg', category: 'kinderschminken', alt: 'Facepainting' },
-  { src: '/images/services/kinderschminken_1.jpg', category: 'kinderschminken', alt: 'Kinderschminken Service' },
-  { src: '/images/services/kinderschminken_2.jpg', category: 'kinderschminken', alt: 'Kinderschminken Event' },
+  { src: `${baseUrl}images/gallery/kinderschminken_beispiel_1.jpg`, category: 'kinderschminken', alt: 'Kinderschminken Beispiel 1' },
+  { src: `${baseUrl}images/gallery/kinderschminken_beispiel_2.jpg`, category: 'kinderschminken', alt: 'Kinderschminken Beispiel 2' },
+  { src: `${baseUrl}images/gallery/galerie_1.jpg`, category: 'kinderschminken', alt: 'Kinderschminken' },
+  { src: `${baseUrl}images/gallery/galerie_2.jpg`, category: 'kinderschminken', alt: 'Facepainting' },
+  { src: `${baseUrl}images/services/kinderschminken_1.jpg`, category: 'kinderschminken', alt: 'Kinderschminken Service' },
+  { src: `${baseUrl}images/services/kinderschminken_2.jpg`, category: 'kinderschminken', alt: 'Kinderschminken Event' },
 
   // Ballons
-  { src: '/images/services/ballons_1.jpg', category: 'ballons', alt: 'Ballon-Figuren' },
-  { src: '/images/services/ballons_2.jpg', category: 'ballons', alt: 'Ballonkunst' },
-  { src: '/images/services/ballons_3.jpg', category: 'ballons', alt: 'Ballontiere' },
-  { src: '/images/services/ballons_4.jpg', category: 'ballons', alt: 'Ballondekoration' },
-  { src: '/images/services/ballons_5.jpg', category: 'ballons', alt: 'Ballongeschenke' },
-  { src: '/images/services/ballons_6.jpg', category: 'ballons', alt: 'Ballonkunst Event' },
+  { src: `${baseUrl}images/services/ballons_1.jpg`, category: 'ballons', alt: 'Ballon-Figuren' },
+  { src: `${baseUrl}images/services/ballons_2.jpg`, category: 'ballons', alt: 'Ballonkunst' },
+  { src: `${baseUrl}images/services/ballons_3.jpg`, category: 'ballons', alt: 'Ballontiere' },
+  { src: `${baseUrl}images/services/ballons_4.jpg`, category: 'ballons', alt: 'Ballondekoration' },
+  { src: `${baseUrl}images/services/ballons_5.jpg`, category: 'ballons', alt: 'Ballongeschenke' },
+  { src: `${baseUrl}images/services/ballons_6.jpg`, category: 'ballons', alt: 'Ballonkunst Event' },
 
   // Events
-  { src: '/images/gallery/galerie_3.jpg', category: 'events', alt: 'Event 1' },
-  { src: '/images/gallery/galerie_4.jpg', category: 'events', alt: 'Event 2' },
-  { src: '/images/services/facepainting_1.jpg', category: 'events', alt: 'Facepainting Event' },
-  { src: '/images/services/halloween_1.jpg', category: 'events', alt: 'Halloween Event' },
-  { src: '/images/services/53085032.jpg', category: 'events', alt: 'Event Animation' },
-  { src: '/images/services/53085052.jpg', category: 'events', alt: 'Event Entertainment' },
+  { src: `${baseUrl}images/gallery/galerie_3.jpg`, category: 'events', alt: 'Event 1' },
+  { src: `${baseUrl}images/gallery/galerie_4.jpg`, category: 'events', alt: 'Event 2' },
+  { src: `${baseUrl}images/services/facepainting_1.jpg`, category: 'events', alt: 'Facepainting Event' },
+  { src: `${baseUrl}images/services/halloween_1.jpg`, category: 'events', alt: 'Halloween Event' },
+  { src: `${baseUrl}images/services/53085032.jpg`, category: 'events', alt: 'Event Animation' },
+  { src: `${baseUrl}images/services/53085052.jpg`, category: 'events', alt: 'Event Entertainment' },
 ];
 
 const categories = [
