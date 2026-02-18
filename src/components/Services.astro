@@ -1,0 +1,146 @@
+---
+const services = [
+  {
+    title: 'Kinderschminken',
+    description: 'Professionelles Kinderschminken mit hautverträglichen Farben für Events, Kindergeburtstage und Feste.',
+    image: '/images/services/kinderschminken_1.jpg',
+    icon: '🎨',
+    gradient: 'from-pink-400 to-rose-500',
+  },
+  {
+    title: 'Ballon-Figuren',
+    description: 'Kreative Ballonkunst - von einfachen Tieren bis zu komplexen Figuren und Skulpturen.',
+    image: '/images/services/ballons_1.jpg',
+    icon: '🎈',
+    gradient: 'from-cyan-400 to-teal-500',
+  },
+  {
+    title: 'Facepainting',
+    description: 'Kunstvolles Facepainting für Erwachsene und besondere Anlässe.',
+    image: '/images/services/facepainting_1.jpg',
+    icon: '✨',
+    gradient: 'from-purple-400 to-indigo-500',
+  },
+  {
+    title: 'Halloween Effects',
+    description: 'Gruselige und spektakuläre Halloween-Schminkeffekte für unvergessliche Partys.',
+    image: '/images/services/halloween_1.jpg',
+    icon: '🎃',
+    gradient: 'from-orange-400 to-red-500',
+  },
+  {
+    title: 'Glitzertattoos',
+    description: 'Funkelnde Glitzertattoos, die mehrere Tage halten und garantiert begeistern.',
+    image: '/images/services/30853786.JPG',
+    icon: '💎',
+    gradient: 'from-yellow-400 to-amber-500',
+  },
+  {
+    title: 'Event-Animation',
+    description: 'Komplette Unterhaltung für Ihre Veranstaltung mit verschiedenen Attraktionen.',
+    image: '/images/services/53085032.jpg',
+    icon: '🎪',
+    gradient: 'from-fuchsia-400 to-pink-500',
+  },
+];
+---
+
+<section id="leistungen" class="relative py-24 overflow-hidden">
+  <!-- Background with texture -->
+  <div class="absolute inset-0 bg-white grain-overlay"></div>
+
+  <!-- Decorative Blobs -->
+  <div class="absolute top-20 right-0 w-96 h-96 bg-[var(--color-primary)] opacity-5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-0 w-96 h-96 bg-[var(--color-secondary)] opacity-5 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 sm:px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <div class="inline-block mb-4">
+        <span class="px-4 py-2 bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-secondary)]/10 text-[var(--color-primary)] rounded-full text-sm font-bold uppercase tracking-wide">
+          Was wir anbieten
+        </span>
+      </div>
+      <h2 class="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-6">
+        Unsere <span class="relative inline-block scribble-underline">Leistungen</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Von Kinderschminken bis Ballonkunst - wir verwandeln dein Event in ein <span class="font-bold text-[var(--color-secondary)]">unvergessliches Erlebnis</span> voller Magie und Freude
+      </p>
+    </div>
+
+    <!-- Services Grid - Bento Box Style -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {services.map((service, index) => {
+        // Create alternating card sizes for visual interest
+        const isLarge = index === 0 || index === 5;
+        const cardClass = isLarge ? 'md:col-span-2 lg:col-span-1' : '';
+
+        return (
+          <div
+            class={`group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-colorful transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] cursor-fancy ${cardClass}`}
+            style={`animation-delay: ${index * 100}ms;`}
+          >
+            <!-- Image Container with Gradient Overlay -->
+            <div class="relative h-72 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
+                loading="lazy"
+              />
+              <!-- Multi-layer gradient -->
+              <div class={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-40 group-hover:opacity-50 transition-opacity duration-300`}></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+              <!-- Floating Icon -->
+              <div class="absolute top-6 right-6 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                <span class="text-3xl">{service.icon}</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 lg:p-8 relative">
+              <!-- Decorative corner element -->
+              <div class={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${service.gradient} opacity-10 rounded-bl-3xl`}></div>
+
+              <h3 class="text-2xl lg:text-3xl font-bold font-display text-gray-900 mb-3 group-hover:text-[var(--color-primary)] transition-colors relative z-10">
+                {service.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-base lg:text-lg relative z-10">
+                {service.description}
+              </p>
+
+              <!-- Hover Arrow -->
+              <div class="mt-4 flex items-center gap-2 text-[var(--color-primary)] font-semibold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-300">
+                <span>Mehr erfahren</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Decorative border glow -->
+            <div class={`absolute inset-0 rounded-3xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl`}></div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-20 text-center">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-8 bg-gradient-to-r from-[var(--color-primary)]/5 via-[var(--color-secondary)]/5 to-[var(--color-accent)]/5 rounded-3xl backdrop-blur-sm border border-gray-100">
+        <div class="text-left">
+          <p class="text-lg font-semibold text-gray-900 mb-1">Nicht das Richtige dabei?</p>
+          <p class="text-gray-600">Wir erstellen individuelle Event-Konzepte nach deinen Wünschen!</p>
+        </div>
+        <a
+          href="#kontakt"
+          class="whitespace-nowrap px-8 py-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold rounded-full shadow-lg hover:shadow-colorful transition-all duration-300 hover:scale-105 cursor-fancy"
+        >
+          Individuell anfragen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

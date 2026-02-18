@@ -1,0 +1,254 @@
+---
+const galleryImages = [
+  // Kinderschminken
+  { src: '/images/gallery/kinderschminken_beispiel_1.jpg', category: 'kinderschminken', alt: 'Kinderschminken Beispiel 1' },
+  { src: '/images/gallery/kinderschminken_beispiel_2.jpg', category: 'kinderschminken', alt: 'Kinderschminken Beispiel 2' },
+  { src: '/images/gallery/galerie_1.jpg', category: 'kinderschminken', alt: 'Kinderschminken' },
+  { src: '/images/gallery/galerie_2.jpg', category: 'kinderschminken', alt: 'Facepainting' },
+  { src: '/images/services/kinderschminken_1.jpg', category: 'kinderschminken', alt: 'Kinderschminken Service' },
+  { src: '/images/services/kinderschminken_2.jpg', category: 'kinderschminken', alt: 'Kinderschminken Event' },
+
+  // Ballons
+  { src: '/images/services/ballons_1.jpg', category: 'ballons', alt: 'Ballon-Figuren' },
+  { src: '/images/services/ballons_2.jpg', category: 'ballons', alt: 'Ballonkunst' },
+  { src: '/images/services/ballons_3.jpg', category: 'ballons', alt: 'Ballontiere' },
+  { src: '/images/services/ballons_4.jpg', category: 'ballons', alt: 'Ballondekoration' },
+  { src: '/images/services/ballons_5.jpg', category: 'ballons', alt: 'Ballongeschenke' },
+  { src: '/images/services/ballons_6.jpg', category: 'ballons', alt: 'Ballonkunst Event' },
+
+  // Events
+  { src: '/images/gallery/galerie_3.jpg', category: 'events', alt: 'Event 1' },
+  { src: '/images/gallery/galerie_4.jpg', category: 'events', alt: 'Event 2' },
+  { src: '/images/services/facepainting_1.jpg', category: 'events', alt: 'Facepainting Event' },
+  { src: '/images/services/halloween_1.jpg', category: 'events', alt: 'Halloween Event' },
+  { src: '/images/services/53085032.jpg', category: 'events', alt: 'Event Animation' },
+  { src: '/images/services/53085052.jpg', category: 'events', alt: 'Event Entertainment' },
+];
+
+const categories = [
+  { id: 'all', name: 'Alle' },
+  { id: 'kinderschminken', name: 'Kinderschminken' },
+  { id: 'ballons', name: 'Ballons' },
+  { id: 'events', name: 'Events' },
+];
+---
+
+<section id="galerie" class="py-20 bg-gradient-to-br from-cyan-50 to-pink-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Unsere <span class="text-[var(--color-secondary)]">Galerie</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Ein Einblick in unsere Arbeiten - von bunten Kindergesichtern bis zu kunstvollen Kreationen
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      {categories.map((category) => (
+        <button
+          data-filter={category.id}
+          class={`filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+            category.id === 'all'
+              ? 'bg-[var(--color-primary)] text-white shadow-lg'
+              : 'bg-white text-gray-700 hover:bg-[var(--color-primary)] hover:text-white shadow-md'
+          }`}
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
+
+    <!-- Gallery Grid -->
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {galleryImages.map((image, index) => (
+        <div
+          data-category={image.category}
+          class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer aspect-square"
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-4 left-4 right-4">
+              <p class="text-white font-medium">{image.alt}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4">
+  <button
+    id="lightbox-close"
+    class="absolute top-4 right-4 text-white hover:text-[var(--color-primary)] transition-colors z-10"
+    aria-label="Close lightbox"
+  >
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <button
+    id="lightbox-prev"
+    class="absolute left-4 text-white hover:text-[var(--color-primary)] transition-colors"
+    aria-label="Previous image"
+  >
+    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
+  <button
+    id="lightbox-next"
+    class="absolute right-4 text-white hover:text-[var(--color-primary)] transition-colors"
+    aria-label="Next image"
+  >
+    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <img
+    id="lightbox-img"
+    src=""
+    alt=""
+    class="max-w-full max-h-full object-contain"
+  />
+</div>
+
+<script>
+  // Gallery filter functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      // Update active button
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-[var(--color-primary)]', 'text-white', 'shadow-lg');
+        btn.classList.add('bg-white', 'text-gray-700', 'shadow-md');
+      });
+      button.classList.remove('bg-white', 'text-gray-700', 'shadow-md');
+      button.classList.add('bg-[var(--color-primary)]', 'text-white', 'shadow-lg');
+
+      // Filter gallery items
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          item.style.display = 'block';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+  let visibleImages: HTMLElement[] = [];
+
+  function updateVisibleImages() {
+    visibleImages = Array.from(galleryItems).filter(
+      (item: Element) => (item as HTMLElement).style.display !== 'none'
+    ) as HTMLElement[];
+  }
+
+  function openLightbox(index: number) {
+    updateVisibleImages();
+    currentIndex = index;
+    const img = visibleImages[currentIndex]?.querySelector('img');
+    if (img) {
+      lightboxImg!.src = img.src;
+      lightboxImg!.alt = img.alt;
+      lightbox!.classList.remove('hidden');
+      lightbox!.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLightbox() {
+    lightbox!.classList.add('hidden');
+    lightbox!.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function showPrevImage() {
+    updateVisibleImages();
+    currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+    const img = visibleImages[currentIndex]?.querySelector('img');
+    if (img) {
+      lightboxImg!.src = img.src;
+      lightboxImg!.alt = img.alt;
+    }
+  }
+
+  function showNextImage() {
+    updateVisibleImages();
+    currentIndex = (currentIndex + 1) % visibleImages.length;
+    const img = visibleImages[currentIndex]?.querySelector('img');
+    if (img) {
+      lightboxImg!.src = img.src;
+      lightboxImg!.alt = img.alt;
+    }
+  }
+
+  // Event listeners
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      updateVisibleImages();
+      const itemIndex = visibleImages.indexOf(item as HTMLElement);
+      if (itemIndex !== -1) {
+        openLightbox(itemIndex);
+      }
+    });
+  });
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxPrev?.addEventListener('click', showPrevImage);
+  lightboxNext?.addEventListener('click', showNextImage);
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox?.classList.contains('flex')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrevImage();
+      if (e.key === 'ArrowRight') showNextImage();
+    }
+  });
+</script>
+
+<style>
+  .gallery-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+</style>

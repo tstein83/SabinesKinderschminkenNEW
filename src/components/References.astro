@@ -1,0 +1,238 @@
+---
+const topReferences = [
+  {
+    name: 'IAA Frankfurt',
+    description: 'Internationale Automobil-Ausstellung - Kinderschminken für Familien-Events',
+    image: '/images/references/iaa_frankfurt.jpg',
+  },
+  {
+    name: 'Hessentag',
+    description: 'Größtes Volksfest Hessens - Entertainment-Programm für Kinder',
+    image: '/images/references/hessentag.jpg',
+  },
+  {
+    name: 'Hilton Hotels',
+    description: 'Exklusive Event-Betreuung in Hilton Hotels der Region',
+    image: '/images/references/hilton.jpg',
+  },
+  {
+    name: 'SOS Kinderdorf',
+    description: 'Benefiz-Events und Kinderfeste für den guten Zweck',
+    image: '/images/references/sos_kinderdorf.jpg',
+  },
+  {
+    name: 'Maimarkt Mannheim',
+    description: 'Eine der größten Regionalmessen Deutschlands',
+    image: '/images/references/maimarkt.jpg',
+  },
+  {
+    name: 'DOG Messe',
+    description: 'Die DOG Messe für Hundefreunde mit Familien-Programm',
+    image: '/images/references/dog_messe.jpg',
+  },
+  {
+    name: 'Citydome Eschweiler',
+    description: 'Kino-Events und Familien-Vorstellungen',
+    image: '/images/references/citydome.jpg',
+  },
+  {
+    name: 'Autohaus Fuhrmeister',
+    description: 'Tag der offenen Tür und Kunden-Events',
+    image: '/images/references/autohaus_fuhrmeister.jpg',
+  },
+  {
+    name: 'Kaufhof',
+    description: 'Kinder-Aktionen und Shopping-Events',
+    image: '/images/references/kaufhof.jpg',
+  },
+  {
+    name: 'CSL Behring',
+    description: 'Firmenfeste und Familien-Events',
+    image: '/images/references/csl_behring.jpg',
+  },
+  {
+    name: 'PepsiCo',
+    description: 'Unternehmens-Events und Marketing-Aktionen',
+    image: '/images/references/pepsico.jpg',
+  },
+  {
+    name: 'SCA Deutschland',
+    description: 'Firmen-Veranstaltungen und Kinder-Programme',
+    image: '/images/references/sca.jpg',
+  },
+  {
+    name: 'Bethmann Bank',
+    description: 'Private Banking Events mit exklusivem Entertainment',
+    image: '/images/references/bethmann_bank.jpg',
+  },
+  {
+    name: 'Heidelberger Volksbank',
+    description: 'Kunden-Events und Firmenfeiern',
+    image: '/images/references/volksbank.jpg',
+  },
+  {
+    name: 'Kölle Zoo',
+    description: 'Eröffnungen und Jubiläums-Events',
+    image: '/images/references/koelle_zoo.jpg',
+  },
+  {
+    name: 'Engel & Völkers',
+    description: 'Immobilien-Events und Kundenfeste',
+    image: '/images/references/engel_voelkers.jpg',
+  },
+  {
+    name: 'Hafensommer Mainz',
+    description: 'Großes Mainzer Sommer-Festival am Rheinufer',
+    image: '/images/references/hafensommer.jpg',
+  },
+  {
+    name: 'Viernheimer Stadtfest',
+    description: 'Traditionelles Stadtfest mit Familien-Programm',
+    image: '/images/references/viernheim.jpg',
+  },
+  {
+    name: 'Hochzeitsmesse Auerbach',
+    description: 'Hochzeitsmessen und Braut-Events',
+    image: '/images/references/hochzeitsmesse.jpg',
+  },
+  {
+    name: 'Möbel Preiss',
+    description: 'Verkaufsoffene Sonntage und Jubiläums-Events',
+    image: '/images/references/moebel_preiss.jpg',
+  },
+];
+
+const moreReferences = {
+  'Firmenveranstaltungen & Messen': [
+    'Procter & Gamble',
+    'Fraport AG',
+    'Deutsche Bank',
+    'Commerzbank',
+    'SAP',
+    'BASF',
+    'Merck',
+    'Lufthansa',
+  ],
+  'Feste & Events': [
+    'Apfelwein-Festival Frankfurt',
+    'Darmstädter Stadtfest',
+    'Bergsträßer Winzerfest',
+    'Wormser Backfischfest',
+    'Laurentiusfest',
+    'Lindenfest Bensheim',
+  ],
+  'Hotels & Gastronomie': [
+    'Steigenberger Hotels',
+    'Sheraton Hotels',
+    'Marriott Hotels',
+    'Radisson Blu',
+    'Holiday Inn',
+    'Dorint Hotels',
+  ],
+  'Einzelhandel & Geschäfte': [
+    'IKEA',
+    'Karstadt',
+    'Metro',
+    'OBI',
+    'Bauhaus',
+    'Toys R Us',
+  ],
+  'Kindergärten & Schulen': [
+    'Verschiedene Kindergärten',
+    'Grundschulen',
+    'Kinderhorte',
+    'Familienzentren',
+  ],
+  'Vereine & Organisationen': [
+    'TSG 1899 Hoffenheim',
+    'SV Darmstadt 98',
+    'Verschiedene Sportvereine',
+    'Soziale Einrichtungen',
+  ],
+  'Weihnachtsmärkte': [
+    'Weihnachtsmarkt Frankfurt',
+    'Weihnachtsmarkt Darmstadt',
+    'Weihnachtsmarkt Mannheim',
+    'Weihnachtsmarkt Heidelberg',
+  ],
+  'Weitere Veranstaltungen': [
+    'Private Kindergeburtstage',
+    'Hochzeiten',
+    'Taufen',
+    'Jubiläen',
+    'Baby-Shower Partys',
+    'Straßenfeste',
+  ],
+};
+---
+
+<section id="referenzen" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Unsere <span class="text-[var(--color-primary)]">Referenzen</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Namhafte Kunden vertrauen auf unsere Expertise und Professionalität
+      </p>
+    </div>
+
+    <!-- Top 20 References Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {topReferences.map((reference) => (
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src={reference.image}
+              alt={reference.name}
+              loading="lazy"
+              class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{reference.name}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{reference.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- More References -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+      <h3 class="text-3xl font-bold text-center text-gray-900 mb-8">
+        Weitere <span class="text-[var(--color-secondary)]">Referenzen</span>
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {Object.entries(moreReferences).map(([category, items]) => (
+          <div>
+            <h4 class="text-lg font-bold text-[var(--color-primary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
+              {category}
+            </h4>
+            <ul class="space-y-2">
+              {items.map((item) => (
+                <li class="text-gray-600 text-sm pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-[var(--color-secondary)] before:font-bold">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <p class="text-lg text-gray-600 mb-6">
+          Werden Sie Teil unserer zufriedenen Kunden!
+        </p>
+        <a
+          href="#kontakt"
+          class="inline-block px-8 py-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          Jetzt unverbindlich anfragen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

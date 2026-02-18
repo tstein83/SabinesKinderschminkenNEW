@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Gallery from '../components/Gallery.astro';
+import ServiceArea from '../components/ServiceArea.astro';
+import References from '../components/References.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Sabines Kinderschminken - Professionelles Kinderschminken in Frankfurt, Mannheim & Darmstadt">
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <Gallery />
+
+    <!-- About Section -->
+    <section id="ueber-uns" class="relative py-24 overflow-hidden">
+      <!-- Animated Background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-pink-50"></div>
+
+      <!-- Decorative Elements -->
+      <div class="absolute top-1/4 left-0 w-72 h-72 bg-[var(--color-secondary)] opacity-10 rounded-full blur-3xl animate-blob"></div>
+      <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl animate-blob" style="animation-delay: 2s;"></div>
+
+      <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Image Side -->
+          <div class="relative order-2 lg:order-1">
+            <!-- Main Image -->
+            <div class="relative rounded-[3rem] overflow-hidden shadow-colorful-lg transform hover:scale-105 transition-all duration-500">
+              <img
+                src="/images/team/team_1.jpg"
+                alt="Sabines Team"
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <!-- Gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary)]/20 to-transparent"></div>
+            </div>
+
+            <!-- Floating stats badge -->
+            <div class="absolute -bottom-8 -right-8 bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300 hidden sm:block">
+              <div class="text-center">
+                <div class="text-5xl font-bold font-display gradient-text mb-2">25+</div>
+                <div class="text-sm font-medium text-gray-600">Jahre im Business</div>
+              </div>
+            </div>
+
+            <!-- Decorative blobs -->
+            <div class="absolute -z-10 -top-8 -left-8 w-40 h-40 bg-[var(--color-accent)] opacity-20 blob-shape blur-2xl"></div>
+            <div class="absolute -z-10 -bottom-8 -right-8 w-40 h-40 bg-[var(--color-secondary)] opacity-20 blob-shape blur-2xl"></div>
+          </div>
+
+          <!-- Content Side -->
+          <div class="space-y-6 order-1 lg:order-2">
+            <!-- Section badge -->
+            <div class="inline-block">
+              <span class="px-4 py-2 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 text-[var(--color-secondary)] rounded-full text-sm font-bold uppercase tracking-wide">
+                Unser Team
+              </span>
+            </div>
+
+            <h2 class="text-5xl md:text-6xl font-bold font-display text-gray-900 leading-tight">
+              Über <span class="relative inline-block scribble-underline">Uns</span>
+            </h2>
+
+            <p class="text-xl text-gray-700 leading-relaxed">
+              Seit über <span class="font-bold text-[var(--color-primary)]">25 Jahren</span> verzaubern wir Kinder und Erwachsene mit professionellem Kinderschminken, kreativer Ballonkunst und vielfältigen Event-Attraktionen in der gesamten <span class="font-bold text-[var(--color-secondary)]">Rhein-Main-Region</span>.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Unser erfahrenes Team sorgt mit Leidenschaft, Kreativität und hautverträglichen Materialien dafür, dass Ihr Event zu einem unvergesslichen Erlebnis wird.
+            </p>
+
+            <!-- Features List -->
+            <div class="grid sm:grid-cols-2 gap-4 pt-6">
+              <div class="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">✓</span>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900 mb-1">25+ Jahre</div>
+                  <div class="text-sm text-gray-600">Erfahrung & Expertise</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-accent)] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">✓</span>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900 mb-1">Hautverträglich</div>
+                  <div class="text-sm text-gray-600">Profi-Qualität</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-orange)] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">✓</span>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900 mb-1">Zuverlässig</div>
+                  <div class="text-sm text-gray-600">Pünktlich & professionell</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-gradient-to-br from-[var(--color-purple)] to-[var(--color-primary)] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">✓</span>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900 mb-1">Individuell</div>
+                  <div class="text-sm text-gray-600">Event-Konzepte</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ServiceArea />
+
+    <References />
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="relative py-24 overflow-hidden">
+      <!-- Animated Background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-pink-50 via-purple-50 to-cyan-50 animate-gradient"></div>
+
+      <!-- Decorative Blobs -->
+      <div class="absolute top-20 left-10 w-96 h-96 bg-[var(--color-primary)] opacity-20 rounded-full blur-3xl animate-blob"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-[var(--color-secondary)] opacity-20 rounded-full blur-3xl animate-blob" style="animation-delay: 2s;"></div>
+
+      <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <!-- Header -->
+          <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+              <span class="px-4 py-2 bg-white/60 backdrop-blur-sm text-[var(--color-primary)] rounded-full text-sm font-bold uppercase tracking-wide shadow-lg">
+                Lass uns sprechen
+              </span>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-6">
+              Kontaktieren Sie <span class="relative inline-block scribble-underline">uns</span>
+            </h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+              Haben Sie Fragen oder möchten Sie uns für Ihr Event buchen? Wir freuen uns auf Ihre Anfrage!
+            </p>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="relative">
+            <!-- Decorative background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] rounded-[3rem] transform rotate-1"></div>
+
+            <!-- Actual form container -->
+            <div class="relative bg-white rounded-[3rem] shadow-colorful-lg p-8 md:p-12 transform -rotate-0">
+              <form class="space-y-6">
+                <!-- Name & Email Row -->
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                    <label for="name" class="block text-sm font-bold text-gray-900">
+                      Name <span class="text-[var(--color-primary)]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Ihr Name"
+                      class="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none hover:border-gray-300"
+                    />
+                  </div>
+                  <div class="space-y-2">
+                    <label for="email" class="block text-sm font-bold text-gray-900">
+                      E-Mail <span class="text-[var(--color-primary)]">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="ihre@email.de"
+                      class="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none hover:border-gray-300"
+                    />
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="space-y-2">
+                  <label for="phone" class="block text-sm font-bold text-gray-900">Telefon</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Optional"
+                    class="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none hover:border-gray-300"
+                  />
+                </div>
+
+                <!-- Event Type -->
+                <div class="space-y-2">
+                  <label for="event-type" class="block text-sm font-bold text-gray-900">Event-Art</label>
+                  <div class="relative">
+                    <select
+                      id="event-type"
+                      name="event-type"
+                      class="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none hover:border-gray-300 appearance-none cursor-pointer"
+                    >
+                      <option value="">Bitte wählen...</option>
+                      <option value="kindergeburtstag">🎂 Kindergeburtstag</option>
+                      <option value="firmenevent">🏢 Firmenevent</option>
+                      <option value="stadtfest">🎪 Stadtfest</option>
+                      <option value="hochzeit">💒 Hochzeit</option>
+                      <option value="sonstiges">✨ Sonstiges</option>
+                    </select>
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="space-y-2">
+                  <label for="message" class="block text-sm font-bold text-gray-900">
+                    Nachricht <span class="text-[var(--color-primary)]">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Erzählen Sie uns von Ihrem Event..."
+                    class="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none hover:border-gray-300 resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="group relative w-full px-8 py-5 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold text-lg rounded-2xl shadow-colorful hover:shadow-colorful-lg transition-all duration-300 hover:scale-[1.02] cursor-fancy overflow-hidden"
+                >
+                  <span class="relative z-10 flex items-center justify-center gap-3">
+                    Anfrage senden
+                    <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                  <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+              </form>
+
+              <!-- Contact Info Cards -->
+              <div class="grid sm:grid-cols-3 gap-4 mt-8 pt-8 border-t-2 border-gray-100">
+                <div class="text-center p-4 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent rounded-2xl">
+                  <div class="text-3xl mb-2">📧</div>
+                  <div class="text-xs text-gray-600 font-medium mb-1">E-Mail</div>
+                  <div class="text-sm font-bold text-gray-900">info@sabines.de</div>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-[var(--color-secondary)]/5 to-transparent rounded-2xl">
+                  <div class="text-3xl mb-2">📍</div>
+                  <div class="text-xs text-gray-600 font-medium mb-1">Region</div>
+                  <div class="text-sm font-bold text-gray-900">Rhein-Main</div>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-[var(--color-accent)]/5 to-transparent rounded-2xl">
+                  <div class="text-3xl mb-2">⏰</div>
+                  <div class="text-xs text-gray-600 font-medium mb-1">Antwortzeit</div>
+                  <div class="text-sm font-bold text-gray-900">24h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
